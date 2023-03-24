@@ -1,0 +1,19 @@
+1: package chap15;
+2: 
+3: import java.util.Scanner;
+4: 
+5: public class ScannerTest {
+6: 
+7: 	public static void main(String[] args) {
+8: 		// java.util.Scanner - java.io 클래스들 반환
+9: 		Scanner sc = new Scanner(System.in);
+10: 		System.out.println("정수 2개를 입력하면 덧셈 결과를 보여드립니다.");
+11: 		int first = sc.nextInt();
+12: 		int second = sc.nextInt();
+13: 		sc.nextLine();
+14: 		System.out.println(first + second);
+15: 		System.out.println("한글 문자열을 입력하세요.");
+16: 		String third = sc.nextLine(); // 문자열한개는 next()
+17: 		System.out.println(third);
+18: 	}	
+19: 
