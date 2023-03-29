@@ -17,11 +17,11 @@ public class TCPClientTest {
 		OutputStream os = s.getOutputStream(); // 1바이트단위 
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("이름 입력: ");
+		System.out.print("이름 입력: ");
 		String name = input.next() + " ";
-		System.out.println("나이 입력: ");
+		System.out.print("나이 입력: ");
 		String age = input.next() + " ";
-		System.out.println("과정명 입력: ");
+		System.out.print("과정명 입력: ");
 		String sub = input.next() + " ";
 		
 		

@@ -7,6 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Set;
 
 public class TCPServerTest {
 
@@ -38,6 +39,12 @@ public class TCPServerTest {
 			titlemap.put("스프링부트", 35);
 			titlemap.put("mysql", 40);
 			
+			Set<String> titles = titlemap.keySet();
+			for(String t : titles) {
+				if(t.equals(request_str2)) {
+					Integer a = titlemap.get(t);
+				}
+			}
 			//title이 목록에 있으면 해당 나이가 같으면 "홍길동님은 자바 과정 수강 가능합니다."
 			//title이 목록에 있으면 해당 나이가 같지 않으면 "홍길동님은 자바 과정 수강 불가능합니다."
 			//title이 목록에 없으면  "홍길동님은 수강신청 불가능합니다."
