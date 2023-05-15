@@ -1,6 +1,7 @@
 package forward;
 
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -33,8 +34,12 @@ public class ForwarTest1 extends HttpServlet {
 		out.println("<h1>ForwardTest1 클래스입니다.</h1>");
 		out.println("<h1>입력하신 파라미터는 " + id +"</h1>");
 		// 응답 ForwardTest2로 이동
+		ServletContext context = request.getServletContext();
+		System.out.println(context.getInitParameter("test")); //emp
+		//web.xml로부터 전달받음
 		RequestDispatcher rd = request.getRequestDispatcher("/forward2");
 		rd.forward(request, response);
+		
 	}
 
 }

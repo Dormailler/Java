@@ -1,5 +1,6 @@
 package forward;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,9 +12,6 @@ import java.util.ArrayList;
 
 import dto.MemberDTO;
 
-/**
- * Servlet implementation class ForwardTest2
- */
 public class ForwardTest2 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -26,11 +24,12 @@ public class ForwardTest2 extends HttpServlet {
 					+ dto.getEmail() + "</td><td>" + dto.getPhone() + "</td></tr>";
 		}
 		result += "</table>";
-		
+		ServletContext context = request.getServletContext();
+		System.out.println(context.getInitParameter("test")); //emp
 		
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		out.println("<h1>ForwardTest1 클래스입니다.</h1>");
+		out.println("<h1>ForwardTest2 클래스입니다.</h1>");
 		out.println("<h1>입력하신 파라미터는 " + request.getParameter("id") + "</h1>");
 		out.println("<h1>대문자 변경한 값은 " + request.getAttribute("upperid") + "</h1>");
 		out.println(result);

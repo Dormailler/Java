@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" version="5.0">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="5.0">
   <servlet>
     <description></description>
     <display-name>DataSourceServlet</display-name>
@@ -48,5 +48,39 @@
   <servlet-mapping>
     <servlet-name>ForwardTest2</servlet-name>
     <url-pattern>/forward2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ContextTest1</display-name>
+    <servlet-name>ContextTest1</servlet-name>
+    <servlet-class>context.ContextTest1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ContextTest1</servlet-name>
+    <url-pattern>/context1</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>test</param-name>
+    <param-value>emp</param-value>
+  </context-param>
+  <servlet>
+    <description></description>
+    <display-name>ContextTest2</display-name>
+    <servlet-name>ContextTest2</servlet-name>
+    <servlet-class>context.ContextTest2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ContextTest2</servlet-name>
+    <url-pattern>/context2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MyPageServlet</display-name>
+    <servlet-name>MyPageServlet</servlet-name>
+    <servlet-class>session.MyPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyPageServlet</servlet-name>
+    <url-pattern>/mypage</url-pattern>
   </servlet-mapping>
 </web-app>
