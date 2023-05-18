@@ -29,6 +29,7 @@ if(id == null){
 		menu[1] = "상품구입";
 		menu[2] = "결제";
 		menu[3] = "장바구니조회";
+		request.setAttribute("menu", menu);
 	}
 }
 %>

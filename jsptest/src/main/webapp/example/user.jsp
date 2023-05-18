@@ -8,5 +8,12 @@
 </head>
 <body>
 <h1>일반사용자 메뉴</h1>
+<ul>
+<% String[] menu = (String[])request.getAttribute("menu"); 
+for(String one:menu){
+%>
+	<li><%=one %></li>
+<%} %>
+</ul>
 </body>
 </html>
